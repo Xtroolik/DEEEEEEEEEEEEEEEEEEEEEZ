@@ -6,50 +6,52 @@ Console.WriteLine("4. D10");
 Console.WriteLine("5. D12");
 Console.WriteLine("6. D20");
 Console.WriteLine("7. D100");
+Console.WriteLine("q. Exit");
 
 Random rng = new Random();
 int randomThrow = 0;
-string choice = "";
+char choice;
 do
 {
-    choice = Console.ReadLine();
+    choice = Console.ReadKey().KeyChar;
+    Console.WriteLine("");
     switch (choice)
     {
-        case "1":
-            randomThrow = rng.Next(1, 3);
+        case '1':
+            randomThrow = rng.Next(1, 4);
             Console.WriteLine("Rzut kością D3: " + randomThrow.ToString());
             break;
-        case "2":
-            randomThrow = rng.Next(1, 4);
+        case '2':
+            randomThrow = rng.Next(1, 5);
             Console.WriteLine("Rzut kością D4: " + randomThrow.ToString());
             break;
-        case "3":
-            randomThrow = rng.Next(1, 6);
+        case '3':
+            randomThrow = rng.Next(1, 7);
             Console.WriteLine("Rzut kością D6: " + randomThrow.ToString());
             break;
-        case "4":
-            randomThrow = rng.Next(1, 10);
+        case '4':
+            randomThrow = rng.Next(1, 11);
             Console.WriteLine("Rzut kością D10: " + randomThrow.ToString());
             break;
-        case "5":
-            randomThrow = rng.Next(1, 12);
+        case '5':
+            randomThrow = rng.Next(1, 13);
             Console.WriteLine("Rzut kością D12: " + randomThrow.ToString());
             break;
-        case "6":
-            randomThrow = rng.Next(1, 20);
+        case '6':
+            randomThrow = rng.Next(1, 21);
             Console.WriteLine("Rzut kością D20: " + randomThrow.ToString());
             break;
-        case "7":
-            randomThrow = rng.Next(1, 100);
+        case '7':
+            randomThrow = rng.Next(1, 101);
             Console.WriteLine("Rzut kością D100: " + randomThrow.ToString());
             break;
-        case "q":
+        case 'q':
             break;
         default:
             Console.WriteLine("Podałeś złą opcję!");
             break;
     }
+    Console.WriteLine();
 }
-while (choice != "q");
-
+while (choice != 'q');
 
